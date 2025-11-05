@@ -1,0 +1,733 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "Road Accident Data - Masaka City, Uganda",
+    "created": "2024-03-30",
+    "source": "Sample Data for GIS Project",
+    "total_accidents": 30,
+    "period": "January - March 2024",
+    "description": "Road accident hotspots in Masaka City for community safety analysis"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "location": "Masaka-Kampala Highway, Near Masaka Taxi Park",
+        "severity": "fatal",
+        "type": "head-on",
+        "date": "2024-01-08",
+        "time": "07:45",
+        "time_of_day": "morning",
+        "vehicles_involved": 2,
+        "casualties": 3,
+        "fatalities": 2,
+        "injuries": 1,
+        "description": "Head-on collision between bus and private car during morning rush",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "highway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7340, -0.3334]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "location": "Masaka-Mbarara Road, Nyendo Trading Centre",
+        "severity": "serious",
+        "type": "rear-end",
+        "date": "2024-01-12",
+        "time": "14:20",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 3,
+        "casualties": 2,
+        "fatalities": 0,
+        "injuries": 2,
+        "description": "Multiple vehicle collision near Nyendo market area",
+        "weather": "rainy",
+        "road_condition": "wet",
+        "road_type": "highway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7135, -0.3389]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "location": "Masaka Town Central, Near Clock Tower",
+        "severity": "minor",
+        "type": "pedestrian",
+        "date": "2024-01-18",
+        "time": "17:30",
+        "time_of_day": "evening",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 0,
+        "injuries": 1,
+        "description": "Pedestrian hit while crossing at busy clock tower intersection",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7352, -0.3356]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "location": "Katwe-Butego Road, Near Katwe Landing Site",
+        "severity": "fatal",
+        "type": "single-vehicle",
+        "date": "2024-01-25",
+        "time": "21:15",
+        "time_of_day": "night",
+        "vehicles_involved": 1,
+        "casualties": 2,
+        "fatalities": 1,
+        "injuries": 1,
+        "description": "Motorcycle accident on sharp bend near Lake Victoria",
+        "weather": "clear",
+        "road_condition": "poor",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7208, -0.3157]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "location": "Masaka-Bukakata Road, Kijjabwemi Area",
+        "severity": "serious",
+        "type": "head-on",
+        "date": "2024-02-03",
+        "time": "08:30",
+        "time_of_day": "morning",
+        "vehicles_involved": 2,
+        "casualties": 4,
+        "fatalities": 0,
+        "injuries": 4,
+        "description": "Taxi and boda boda head-on collision near Kijjabwemi",
+        "weather": "foggy",
+        "road_condition": "fair",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7289, -0.3256]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "location": "Nyendo-Ssaza Road, Near Masaka Regional Hospital",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-02-10",
+        "time": "16:45",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Minor collision near hospital entrance",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7301, -0.3412]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "location": "Masaka-Kyotera Road, Near Villa Maria",
+        "severity": "fatal",
+        "type": "pedestrian",
+        "date": "2024-02-17",
+        "time": "19:45",
+        "time_of_day": "evening",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 1,
+        "injuries": 0,
+        "description": "Pedestrian accident near Villa Maria trading centre",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "highway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7456, -0.3289]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "location": "Bishop's Senior School Road, Nyendo",
+        "severity": "serious",
+        "type": "single-vehicle",
+        "date": "2024-02-24",
+        "time": "22:30",
+        "time_of_day": "night",
+        "vehicles_involved": 1,
+        "casualties": 3,
+        "fatalities": 0,
+        "injuries": 3,
+        "description": "Car accident with serious injuries near school area",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7167, -0.3367]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "location": "Masaka Main Market Entrance",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-03-02",
+        "time": "10:15",
+        "time_of_day": "morning",
+        "vehicles_involved": 2,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Low-speed collision at market entrance during busy hours",
+        "weather": "clear",
+        "road_condition": "crowded",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7368, -0.3345]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "location": "Masaka-Kyabakuza Road",
+        "severity": "fatal",
+        "type": "head-on",
+        "date": "2024-03-08",
+        "time": "13:45",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 2,
+        "fatalities": 2,
+        "injuries": 0,
+        "description": "Head-on collision on Kyabakuza road",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7267, -0.3198]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "location": "Katwe Road, Near Katwe Primary School",
+        "severity": "serious",
+        "type": "pedestrian",
+        "date": "2024-01-10",
+        "time": "16:20",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 0,
+        "injuries": 1,
+        "description": "Student hit near school during dismissal time",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7223, -0.3124]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "location": "Nyendo Roundabout",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-01-15",
+        "time": "08:45",
+        "time_of_day": "morning",
+        "vehicles_involved": 3,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Multiple vehicle minor collisions at busy roundabout",
+        "weather": "rainy",
+        "road_condition": "wet",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7145, -0.3378]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "location": "Kijjabwemi-Kkingo Road",
+        "severity": "fatal",
+        "type": "single-vehicle",
+        "date": "2024-01-20",
+        "time": "20:15",
+        "time_of_day": "evening",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 1,
+        "injuries": 0,
+        "description": "Motorcycle accident on rural road",
+        "weather": "clear",
+        "road_condition": "poor",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7321, -0.3223]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "location": "Masaka-Bukoto Road, Near Kasijjagirwa",
+        "severity": "serious",
+        "type": "head-on",
+        "date": "2024-01-28",
+        "time": "15:30",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 3,
+        "fatalities": 0,
+        "injuries": 3,
+        "description": "Truck and taxi collision near Kasijjagirwa",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "highway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7412, -0.3298]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "location": "Masaka Town, Near Centenary Park",
+        "severity": "minor",
+        "type": "pedestrian",
+        "date": "2024-02-05",
+        "time": "18:45",
+        "time_of_day": "evening",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 0,
+        "injuries": 1,
+        "description": "Pedestrian minor injury near recreational area",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7389, -0.3321]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "location": "Masaka-Kabonera Road",
+        "severity": "fatal",
+        "type": "rollover",
+        "date": "2024-02-12",
+        "time": "11:30",
+        "time_of_day": "morning",
+        "vehicles_involved": 1,
+        "casualties": 2,
+        "fatalities": 1,
+        "injuries": 1,
+        "description": "Truck rollover on Kabonera road",
+        "weather": "clear",
+        "road_condition": "fair",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7198, -0.3489]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "location": "Nyendo-Kkungu Road",
+        "severity": "serious",
+        "type": "side-swipe",
+        "date": "2024-02-18",
+        "time": "14:15",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 2,
+        "fatalities": 0,
+        "injuries": 2,
+        "description": "Side-swipe collision on narrow road",
+        "weather": "rainy",
+        "road_condition": "wet",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7089, -0.3421]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "location": "Masaka-Bugabira Road",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-02-22",
+        "time": "17:50",
+        "time_of_day": "evening",
+        "vehicles_involved": 2,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Minor rear-end collision in traffic",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7432, -0.3267]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "location": "Katwe-Misanvu Road",
+        "severity": "fatal",
+        "type": "single-vehicle",
+        "date": "2024-03-01",
+        "time": "22:45",
+        "time_of_day": "night",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 1,
+        "injuries": 0,
+        "description": "Motorcycle accident on dark road",
+        "weather": "clear",
+        "road_condition": "poor",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7256, -0.3089]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "location": "Masaka-Kkingo Road",
+        "severity": "serious",
+        "type": "head-on",
+        "date": "2024-03-07",
+        "time": "09:20",
+        "time_of_day": "morning",
+        "vehicles_involved": 2,
+        "casualties": 3,
+        "fatalities": 0,
+        "injuries": 3,
+        "description": "Head-on collision on Kkingo road during fog",
+        "weather": "foggy",
+        "road_condition": "fair",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7334, -0.3187]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "location": "Nyendo Market Access Road",
+        "severity": "minor",
+        "type": "pedestrian",
+        "date": "2024-03-12",
+        "time": "12:30",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 0,
+        "injuries": 1,
+        "description": "Pedestrian accident in market area",
+        "weather": "clear",
+        "road_condition": "crowded",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7123, -0.3398]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "location": "Masaka-Kyanamukaaka Road",
+        "severity": "fatal",
+        "type": "rollover",
+        "date": "2024-03-15",
+        "time": "16:40",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 1,
+        "casualties": 2,
+        "fatalities": 1,
+        "injuries": 1,
+        "description": "Car rollover on sharp bend",
+        "weather": "rainy",
+        "road_condition": "wet",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7489, -0.3356]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 23,
+        "location": "Kijjabwemi-Kabonera Junction",
+        "severity": "serious",
+        "type": "side-swipe",
+        "date": "2024-03-18",
+        "time": "19:15",
+        "time_of_day": "evening",
+        "vehicles_involved": 2,
+        "casualties": 2,
+        "fatalities": 0,
+        "injuries": 2,
+        "description": "Side-swipe at busy junction",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7278, -0.3312]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24,
+        "location": "Masaka-Katosi Road",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-03-20",
+        "time": "08:10",
+        "time_of_day": "morning",
+        "vehicles_involved": 2,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Minor collision during morning rush",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "highway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7523, -0.3245]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 25,
+        "location": "Nyendo-Bukulula Road",
+        "severity": "fatal",
+        "type": "single-vehicle",
+        "date": "2024-03-22",
+        "time": "23:20",
+        "time_of_day": "night",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 1,
+        "injuries": 0,
+        "description": "Motorcycle accident on unlit road",
+        "weather": "clear",
+        "road_condition": "poor",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7056, -0.3456]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 26,
+        "location": "Masaka-Kabowa Road",
+        "severity": "serious",
+        "type": "head-on",
+        "date": "2024-03-25",
+        "time": "13:45",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 3,
+        "fatalities": 0,
+        "injuries": 3,
+        "description": "Head-on collision on Kabowa road",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7398, -0.3198]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27,
+        "location": "Katwe-Kkungu Road",
+        "severity": "minor",
+        "type": "pedestrian",
+        "date": "2024-03-26",
+        "time": "17:30",
+        "time_of_day": "evening",
+        "vehicles_involved": 1,
+        "casualties": 1,
+        "fatalities": 0,
+        "injuries": 1,
+        "description": "Pedestrian accident near residential area",
+        "weather": "clear",
+        "road_condition": "good",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7189, -0.3176]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 28,
+        "location": "Masaka-Kiwangala Road",
+        "severity": "fatal",
+        "type": "rollover",
+        "date": "2024-03-28",
+        "time": "10:20",
+        "time_of_day": "morning",
+        "vehicles_involved": 1,
+        "casualties": 2,
+        "fatalities": 1,
+        "injuries": 1,
+        "description": "Truck rollover on Kiwangala road",
+        "weather": "rainy",
+        "road_condition": "wet",
+        "road_type": "rural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7556, -0.3298]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 29,
+        "location": "Nyendo-Misanvu Road",
+        "severity": "serious",
+        "type": "side-swipe",
+        "date": "2024-03-29",
+        "time": "15:10",
+        "time_of_day": "afternoon",
+        "vehicles_involved": 2,
+        "casualties": 2,
+        "fatalities": 0,
+        "injuries": 2,
+        "description": "Side-swipe collision on narrow road",
+        "weather": "clear",
+        "road_condition": "fair",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7098, -0.3321]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "location": "Masaka Town, Near Bus Park",
+        "severity": "minor",
+        "type": "rear-end",
+        "date": "2024-03-30",
+        "time": "18:20",
+        "time_of_day": "evening",
+        "vehicles_involved": 2,
+        "casualties": 0,
+        "fatalities": 0,
+        "injuries": 0,
+        "description": "Minor collision near bus park during peak hours",
+        "weather": "clear",
+        "road_condition": "crowded",
+        "road_type": "urban"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.7376, -0.3342]
+      }
+    }
+  ]
+}

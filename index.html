@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Accident Hotspot Map - Masaka City, Uganda</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Heatmap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.css" />
+    
+    <!-- Leaflet Control Geocoder CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading indicator -->
+    <div id="loading" class="loading">
+        <h3>Loading Masaka City Road Accident Hotspot Map...</h3>
+        <p>Please wait while we load the accident data.</p>
+    </div>
+
+    <div class="header">
+        <h1>Road Accident Hotspot Map - Masaka City, Uganda</h1>
+        <p>Identifying high-risk areas for road safety improvements in Masaka City</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search location in Masaka City...">
+            <button id="search-button">🔍 Search</button>
+            <button id="my-location">📍 My Location</button>
+            <button id="reset-view">🗺️ Reset View</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="filter-section">
+                <h3>Filter Accidents</h3>
+                
+                <div class="filter-group">
+                    <label>Severity Level:</label>
+                    <select id="severity-filter">
+                        <option value="all">All Severities</option>
+                        <option value="fatal">Fatal</option>
+                        <option value="serious">Serious Injury</option>
+                        <option value="minor">Minor Injury</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Accident Type:</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="head-on">Head-on Collision</option>
+                        <option value="rear-end">Rear-end Collision</option>
+                        <option value="pedestrian">Pedestrian Accident</option>
+                        <option value="single-vehicle">Single Vehicle</option>
+                        <option value="side-swipe">Side-swipe</option>
+                        <option value="rollover">Rollover</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Time of Day:</label>
+                    <select id="time-filter">
+                        <option value="all">All Times</option>
+                        <option value="morning">Morning (6AM-12PM)</option>
+                        <option value="afternoon">Afternoon (12PM-6PM)</option>
+                        <option value="evening">Evening (6PM-12AM)</option>
+                        <option value="night">Night (12AM-6AM)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Road Type:</label>
+                    <select id="road-type-filter">
+                        <option value="all">All Road Types</option>
+                        <option value="highway">Highway</option>
+                        <option value="urban">Urban</option>
+                        <option value="rural">Rural</option>
+                    </select>
+                </div>
+                
+                <button id="reset-filters" class="btn-reset">🔄 Reset All Filters</button>
+            </div>
+            
+            <div class="stats-section">
+                <h3>Accident Statistics</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Total Accidents:</span>
+                    <span id="total-accidents" class="stat-value">30</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Fatal Accidents:</span>
+                    <span id="fatal-accidents" class="stat-value">10</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Serious Accidents:</span>
+                    <span id="serious-accidents" class="stat-value">10</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Minor Accidents:</span>
+                    <span id="minor-accidents" class="stat-value">10</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Casualties:</span>
+                    <span id="total-casualties" class="stat-value">45</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">High Risk Zones:</span>
+                    <span id="hotspots" class="stat-value">8</span>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <h3>Map Legend</h3>
+                <div class="legend-item">
+                    <span class="legend-color fatal"></span>
+                    <span>Fatal Accident</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color serious"></span>
+                    <span>Serious Injury</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color minor"></span>
+                    <span>Minor Injury</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color heatmap"></span>
+                    <span>Accident Hotspot Area</span>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>About This Map</h3>
+                <p>This interactive map shows road accident hotspots in <strong>Masaka City, Uganda</strong> based on sample data from January-March 2024.</p>
+                <p><strong>Key Areas Covered:</strong></p>
+                <ul>
+                    <li>Masaka Town Central</li>
+                    <li>Nyendo Trading Centre</li>
+                    <li>Katwe Landing Site</li>
+                    <li>Kijjabwemi Area</li>
+                    <li>Major highways around Masaka</li>
+                </ul>
+                <p><strong>Data Source:</strong> Sample data for educational purposes</p>
+            </div>
+        </div>
+        
+        <div id="map"></div>
+    </div>
+
+    <!-- Footer with Quick Actions -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Actions</h4>
+                <div class="action-buttons">
+                    <button id="print-map" class="footer-btn">
+                        <span class="btn-icon">🖨️</span>
+                        Print Map
+                    </button>
+                    <button id="share-map" class="footer-btn">
+                        <span class="btn-icon">📤</span>
+                        Share Map
+                    </button>
+                    <button id="export-map" class="footer-btn">
+                        <span class="btn-icon">💾</span>
+                        Export Map
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Map Controls</h4>
+                <div class="action-buttons">
+                    <button id="toggle-heatmap" class="footer-btn">
+                        <span class="btn-icon">🔥</span>
+                        Toggle Heatmap
+                    </button>
+                    <button id="toggle-markers" class="footer-btn">
+                        <span class="btn-icon">📍</span>
+                        Toggle Markers
+                    </button>
+                    <button id="clear-search" class="footer-btn">
+                        <span class="btn-icon">❌</span>
+                        Clear Search
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Project Info</h4>
+                <p>Web-Based GIS Application for Community Safety</p>
+                <p>Masaka City, Uganda | 30 Accident Records</p>
+                <p>Data Period: January - March 2024</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Masaka City Road Safety Initiative | Web-Based GIS Application for Community Mapping and Decision Support</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    
+    <!-- Leaflet Control Geocoder -->
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    
+    <!-- Project Files -->
+    <script src="script.js"></script>
+
+    <script>
+        // Hide loading indicator when page is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingIndicator = document.getElementById('loading');
+                if (loadingIndicator) {
+                    loadingIndicator.style.display = 'none';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
